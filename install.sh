@@ -21,13 +21,13 @@
 # Where the user Klipper config is located (ie. the one used by Klipper to work)
 USER_CONFIG_PATH="${HOME}/printer_data/config"
 # Where to clone Frix-x repository config files (read-only and keep untouched)
-FRIX_CONFIG_PATH="${HOME}/klippain_config"
+FRIX_CONFIG_PATH="${HOME}/chocolatine_config"
 # Path used to store backups when updating (backups are automatically dated when saved inside)
-BACKUP_PATH="${HOME}/klippain_config_backups"
+BACKUP_PATH="${HOME}/chocolatine_config_backups"
 # Where the Klipper folder is located (ie. the internal Klipper firmware machinery)
 KLIPPER_PATH="${HOME}/klipper"
 # Branch from Frix-x/klippain repo to use during install (default: main)
-FRIX_BRANCH="main"
+FRIX_BRANCH="test_chocolatine"
 
 
 set -eu
@@ -79,7 +79,7 @@ function check_download {
 
     if [ ! -d "${FRIX_CONFIG_PATH}" ]; then
         echo "[DOWNLOAD] Downloading Klippain repository..."
-        if git -C $frixtemppath clone -b $frixbranchname https://github.com/Frix-x/klippain.git $frixreponame; then
+        if git -C $frixtemppath clone -b $frixbranchname https://github.com/Benoitone/klippain.git $frixreponame; then
             printf "[DOWNLOAD] Download complete!\n\n"
         else
             echo "[ERROR] Download of Klippain git repository failed!"
